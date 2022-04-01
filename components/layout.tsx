@@ -22,7 +22,7 @@ export default function Layout({
   };
   return (
     <div>
-      <div className="bg-white w-full h-12 max-w-xl justify-center text-lg px-10 font-medium  fixed text-gray-800 border-b top-0 flex items-center">
+      <div className="bg-white w-full h-12 max-w-xl justify-center text-lg px-10 font-medium  fixed text-gray-800 border-b top-0  flex items-center">
         {canGoBack ? (
           <button onClick={onClick} className="absolute left-4">
             <svg
@@ -126,11 +126,11 @@ export default function Layout({
               <span>채팅</span>
             </a>
           </Link>
-          <Link href="/stream">
+          <Link href="/live">
             <a
               className={cls(
                 "flex flex-col items-center space-y-2 ",
-                router.pathname === "/stream"
+                router.pathname === "/live"
                   ? "text-orange-500"
                   : "hover:text-gray-500 transition-colors"
               )}

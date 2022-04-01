@@ -1,1 +1,3 @@
-export const cls = (...className: string[]): string => className.join(" ");
+export function cls(...classnames: string[]) {
+  return classnames.join(" ");
+}
