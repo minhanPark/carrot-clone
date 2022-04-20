@@ -35,7 +35,9 @@ const EditProfile: NextPage = () => {
   }, [user, setValue]);
   const [editProfile, { data, loading }] =
     useMutation<EditProfileResponse>("/api/users/me");
-  const onValid = ({ email, phone, name }: EditProfileForm) => {
+  const onValid = ({ email, phone, name, avatar }: EditProfileForm) => {
+    console.log(avatar);
+    return;
     if (email === "" && phone === "" && name === "") {
       setError("formErrors", { message: "need one parameter." });
     }
@@ -57,6 +59,7 @@ const EditProfile: NextPage = () => {
           >
             Change
             <input
+              {...register("avatar")}
               id="picture"
               type="file"
               className="hidden"
